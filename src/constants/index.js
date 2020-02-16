@@ -1,7 +1,7 @@
-export const API_BASE = process.env.REACT_APP_API_BASE_URL || 'http://localhost:1010';
+export const API_BASE = process.env.REACT_APP_API_BASE_URL || 'https://dry-reaches-40468.herokuapp.com';
 let API_BASE_URI;
-if(process.env.REACT_APP_API_BASE_URL) {
-    API_BASE_URI = process.env.REACT_APP_API_BASE_URL+'/api';
+if(API_BASE) {
+    API_BASE_URI = API_BASE+'/api';
 }
 export const API_BASE_URL = API_BASE_URI || 'http://localhost:1010/api';
 
