@@ -1,4 +1,5 @@
 export const API_BASE = process.env.REACT_APP_API_BASE_URL;
+export const FRONT_BASE = process.env.REACT_APP_FRONT_URL;
 let API_BASE_URI;
 if(API_BASE) {
     API_BASE_URI = API_BASE+'/api';
@@ -35,7 +36,7 @@ export const TECH_TAG = [{id :0 , name: 'Java'},
 {id :6 , name: 'MySQL'},
 {id :7 , name: 'JSP'},];
 
-export const OAUTH2_REDIRECT_URI = !!API_BASE_URI ? API_BASE_URI+'/oauth2/redirect' : 'http://localhost:3000/oauth2/redirect'; 
+export const OAUTH2_REDIRECT_URI = !!FRONT_BASE ? FRONT_BASE+'/oauth2/redirect' : 'http://localhost:3000/oauth2/redirect'; 
 
 export const GOOGLE_AUTH_URL = API_BASE + '/oauth2/authorize/google?redirect_uri=' + OAUTH2_REDIRECT_URI;
 export const FACEBOOK_AUTH_URL = API_BASE + '/oauth2/authorize/facebook?redirect_uri=' + OAUTH2_REDIRECT_URI;
