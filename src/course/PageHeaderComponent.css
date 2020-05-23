@@ -1,0 +1,35 @@
+.no-courses-found {
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;    
+}
+
+@media (max-width: 768px) {
+    .scroll-menu-arrow {
+        padding: 4px;
+        cursor: pointer;
+        font-size: x-large;
+        display: none;
+    }
+
+    .course-accordion{
+        margin: 4px;
+    }
+}
+
+@media (min-width: 769px) {
+    .scroll-menu-arrow {
+        padding: 4px;
+        cursor: pointer;
+        font-size: x-large;
+        display: block;
+    }
+
+    .course-accordion{
+        margin: 4px;
+    }
+}
+
+.scroll-menu-arrow--disabled {
+    visibility: hidden;
+}

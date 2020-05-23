@@ -1,0 +1,241 @@
+.ant-page-header-heading-sub-title{
+  width: 100% !important;
+}
+
+.course-creator-name-col{
+  margin-top: 4px !important;
+}
+
+.image {
+  margin: 0 0 0 60px;
+  display: flex;
+  align-items: center;
+}
+
+.example-link {
+  margin-right: 16px;
+}
+.example-link-icon {
+  margin-right: 8px;
+}
+
+.ant-page-header-rtl .example-link {
+  float: right;
+  margin-right: 0;
+  margin-left: 16px;
+}
+.ant-page-header-rtl .example-link-icon {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .image {
+    flex: 100%;
+    margin: 24px 0 0;
+  }
+  .course-creator-name-col{
+    margin-left: 24px !important;
+  }
+
+  .course-detail-creator-name, .course-detail-creation-date{
+    font-size: 11px !important;
+    font-weight: 600 !important;
+  }
+
+  .course-detail-html-content{
+    overflow-x: scroll !important;
+  }
+
+  .course-detail-author-info-detail-card-col{
+    display: none !important;
+  }
+  .rating-info-card{
+    width: 212px !important;
+  }
+  .course-detail-rating-info-detail-card-col .ant-card-meta-title{
+    display: none !important;
+  }
+  .course-detail-rating-info-detail-card-col{
+    width : 90% !important;
+  }
+
+}
+
+@media (min-width: 769px) {
+  .course-detail-creator-name , .course-detail-creation-date{
+    font-size: 14px !important;
+    font-weight: 500 !important;
+  }
+  .course-detail-author-info-detail-card-col{
+    display: block !important;
+    margin: 8px !important;
+    border-left: groove !important;
+  }
+  .rating-info-card{
+    width: 292px !important;
+  }
+  .course-detail-rating-info-detail-card-col{
+    border-left: groove !important;
+  }
+  .course-detail-rating-info-detail-card-col .ant-card-meta-title{
+    display: block !important;
+  }
+}
+
+.course-detail-creator-name , .course-detail-creation-date{
+  color: rgba(0, 0, 0, 0.85) !important;
+  line-height: 18px !important;
+}
+
+.what-will-i-learn-tab{
+  margin-bottom: 16px !important;
+}
+
+.what-will-i-learn-list , .prerequisite-list , .comment-list-div{
+  margin-left: 4px !important;
+  margin-right: 4px !important;
+}
+
+.comment-input-div{
+  margin-top: 16px !important;
+}
+
+
+.ant-page-header-content .ant-row{
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+.ant-page-header .ant-btn{
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+}
+
+.course-detail-content{
+  padding: 0 !important;
+}
+
+.course-detail-html-content{
+  padding: 16px 24px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.sub-course-list-page-component{
+  padding: 16px 24px !important;
+}
+
+.sub-course-title{
+    margin-bottom: 12px !important;
+    color: rgba(0, 0, 0, 0.85) !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 600 !important;
+}
+
+.course-detail-creation-date{
+  float: right !important;
+}
+
+.comment-action {
+  padding-left: 8px;
+  padding-right: 8px;
+  cursor: 'auto';
+}
+
+[class*='-col-rtl'] .comment-action {
+  padding-right: 8px;
+  padding-left: 0;
+}
+
+.course-detail-author-info-card-col , .course-detail-rating-info-card-col{
+  width: fit-content !important;
+}
+
+
+.course-feedback-details .ant-statistic-content{
+  font-size: 16px !important;
+  color: #4a4a4a !important;
+}
+
+.course-feedback-details .ant-statistic-title, .course-feedback-details .lernopus-user-designation{
+  color: #4a4a4a !important;
+  padding-top: 12px;
+  font-weight: 600 !important;
+}
+
+.course-detail-rating-info-card-col, .course-detail-rating-info-detail-card-col{
+  margin: 8px !important;
+}
+
+.user-details {
+    margin-bottom: 44px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.user-avatar-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    line-height: 60px;
+}
+
+.user-avatar-circle > * {
+    line-height: 120px;
+    font-size: 40px;
+    position: relative !important;
+    left: 0 !important;
+}
+
+.user-summary {
+    text-align: center;
+    padding-top: 20px;
+}
+
+@media (min-width: 576px) {
+    .user-details {
+        text-align: left;
+        display: table;
+    }    
+
+    .user-avatar, .user-summary {
+        float: left;
+        text-align: left;
+    }
+
+    .user-summary {
+        padding-top: 0;
+        padding-left: 40px;
+        width: calc(100% - 120px);
+    }
+}
+
+.user-summary .full-name {
+    font-size: 30px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.85);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.user-summary .username {
+    font-size: 20px;
+}
+
+.user-summary .user-joined {
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .user-summary .full-name {
+        font-size: 24px;
+    }    
+}

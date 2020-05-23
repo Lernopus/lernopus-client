@@ -1,3 +1,7 @@
 .app-content {
   margin-top: 64px;   
 }
+
+.container {
+  max-width: unset !important;
+}

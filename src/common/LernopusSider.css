@@ -1,0 +1,72 @@
+  
+  @media (min-width: 769px) {  
+    .lernopus-app-sider{
+      overflow: auto;
+      height: 100vh;
+      position: fixed !important;
+      left: 0;
+    }
+  
+  }
+  
+  @media (max-width: 769px) {
+    .lernopus-app-sider{
+    }
+  }
+  
+  .lernopus-user-name, .lernopus-user-designation, .ant-statistic-title{
+    color: #fff !important;
+    padding-top: 16px;
+  }
+  
+  .lernopus-user-rating{
+    padding-top: 16px !important;
+  }
+  
+  .lernopus-user-designation{
+    font-size: small;
+    font-weight: bolder;
+  }
+  
+  .lernopus-user-profile{
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+    font-size: 14px !important;
+  }
+  
+  .ant-statistic-title{
+    font-size: 18px !important;
+  }
+  
+  .ant-statistic-content{
+    font-size: 16px !important;
+    color: #fff !important;
+  }
+  
+  .lernopus-statistics-row{
+    margin-right: 0px !important;
+  }
+  
+  
+  .lernopus-user-details {
+    margin-bottom: 44px;
+    padding-top: 24px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .lernopus-user-avatar-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    line-height: 60px;
+  }
+  
+  .lernopus-user-avatar-circle > * {
+    line-height: 120px;
+    font-size: 40px;
+    position: relative !important;
+    left: 0 !important;
+  }
+  
+  

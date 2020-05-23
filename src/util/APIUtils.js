@@ -33,9 +33,167 @@ export function getAllCourses(page, size) {
     });
 }
 
+export function getAllCoursesForSearch(page, size, searchedValue) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/courses?page=" + page + "&size=" + size + "&searchedValue=" + searchedValue,
+        method: 'GET'
+    });
+}
+
+export function getPurchasedCourseList(page, size, loggedInUserId) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/courses?page=" + page + "&size=" + size,
+        method: 'GET'
+    });
+}
+
+export function getWhishlistCourseList(page, size, loggedInUserId) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/courses?page=" + page + "&size=" + size,
+        method: 'GET'
+    });
+}
+
+export function getAllOfficialCategories(page, size) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/categories?page=" + page + "&size=" + size + "&isOfficial=true",
+        method: 'GET'
+    });
+}
+
+export function getAllOfficialCategoriesForSearch(page, size, searchedValue) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/categories?page=" + page + "&size=" + size + "&searchedValue=" + searchedValue + "&isOfficial=true",
+        method: 'GET'
+    });
+}
+
+export function getSubCategories(categoryId,page, size) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/categories/getSubCategories?categoryId=" + categoryId + "&page=" + page + "&size=" + size + "&isOfficial=true",
+        method: 'GET'
+    });
+}
+
+export function getAuthorsToFollow(page, size, loggedInUserId) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/getAuthorToFollow?page=" + page + "&size=" + size  + "&loggedInUserId=" + loggedInUserId,
+        method: 'GET'
+    });
+}
+
+export function getStudentList(page, size, loggedInUserId) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/getAuthorToFollow?page=" + page + "&size=" + size  + "&loggedInUserId=" + loggedInUserId,
+        method: 'GET'
+    });
+}
+
+export function getAuthorsListForSearch(page, size, loggedInUserId, searchedValue) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/getAuthorToFollow?page=" + page + "&size=" + size  + "&loggedInUserId=" + loggedInUserId + "&searchedValue=" + searchedValue,
+        method: 'GET'
+    });
+}
+
+export function getCliqueList(page, size, loggedInUserId, cliqueId) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/getAuthorToFollow?page=" + page + "&size=" + size  + "&loggedInUserId=" + loggedInUserId,
+        method: 'GET'
+    });
+}
+
+export function getCategoryAuthorsToFollow(categoryId,page, size, loggedInUserId) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/getAllAuthorsForCategory?laCategoryId=" + categoryId + "&page=" + page + "&size=" + size  + "&loggedInUserId=" + loggedInUserId,
+        method: 'GET'
+    });
+}
+
+export function getCategoryCourseList(categoryId,page, size, loggedInUserId) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/courses/getAllCoursesForCategory?laCategoryId=" + categoryId + "&page=" + page + "&size=" + size  + "&loggedInUserId=" + loggedInUserId,
+        method: 'GET'
+    });
+}
+
+export function getSearchResults(searchedValue) {
+    var size = COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/courses/getSearchResults?searchedValue=" + searchedValue  + "&size=" + size,
+        method: 'GET'
+    });
+}
+
+export function getAllSpecialCategories(page, size) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/categories/getSpecialCategories?page=" + page + "&size=" + size + "&isOfficial=false",
+        method: 'GET'
+    });
+}
+
+export function getAllSpecialCategoriesForSearch(page, size, searchedValue) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/categories/getSpecialCategories?page=" + page + "&size=" + size + "&searchedValue="+ searchedValue + "&isOfficial=false",
+        method: 'GET'
+    });
+}
+
+
 export function createCourse(courseData) {
     return request({
         url: API_BASE_URL + "/courses",
+        method: 'POST',
+        body: JSON.stringify(courseData)         
+    });
+}
+
+export function updateCourse(courseData) {
+    return request({
+        url: API_BASE_URL + "/updatecourses",
         method: 'POST',
         body: JSON.stringify(courseData)         
     });
@@ -105,12 +263,77 @@ export function getCourseDetails(learnCourseId,page, size) {
     });
 }
 
+export function getCategoryDetails(categoryId,page, size) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+    return request({
+        url: API_BASE_URL + "/categories/learnCategoryId/" + categoryId + "?page=" + page + "&size=" + size,
+        method: 'GET'
+    });
+}
+
+export function getPurchasedCourseDetails(laUserId, page, size) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+    return request({
+        url: API_BASE_URL + "/categories/learnCategoryId/" + '3' + "?page=" + page + "&size=" + size,
+        method: 'GET'
+    });
+}
+
+export function getWhishlistCourseDetails(laUserId, page, size) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+    return request({
+        url: API_BASE_URL + "/categories/learnCategoryId/" + '3' + "?page=" + page + "&size=" + size,
+        method: 'GET'
+    });
+}
+
+export function getStudentsDetails(laUserId, page, size) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+    return request({
+        url: API_BASE_URL + "/categories/learnCategoryId/" + '3' + "?page=" + page + "&size=" + size,
+        method: 'GET'
+    });
+}
+
+export function getCliqueDetails(laUserId, page, size) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+    return request({
+        url: API_BASE_URL + "/categories/learnCategoryId/" + '3' + "?page=" + page + "&size=" + size,
+        method: 'GET'
+    });
+}
+
 export function getUserCreatedCourses(username, page, size) {
     page = page || 0;
     size = size || COURSE_LIST_SIZE;
 
     return request({
         url: API_BASE_URL + "/users/" + username + "/courses?page=" + page + "&size=" + size,
+        method: 'GET'
+    });
+}
+
+export function getUserCreatedCoursesForSearchSuggestion(username, page, size, searchedValue) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/users/" + username + "/coursesSearch?page=" + page + "&size=" + size + "&searchedValue=" + searchedValue,
+        method: 'GET'
+    });
+}
+
+export function getUserCreatedCoursesForSearch(username, page, size, searchedValue) {
+    page = page || 0;
+    size = size || COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/users/" + username + "/courses?page=" + page + "&size=" + size + "&searchedValue=" + searchedValue,
         method: 'GET'
     });
 }

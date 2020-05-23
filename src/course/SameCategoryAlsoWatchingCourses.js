@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { getAllCourses, getUserCreatedCourses} from '../util/APIUtils';
-import Course from './Course';
-import LoadingIndicator  from '../common/LoadingIndicator';
-import { Button, Icon, notification } from 'antd';
 import { COURSE_LIST_SIZE } from '../constants';
 import { withRouter } from 'react-router-dom';
-import './CourseList.css';
+import { ReadOutlined } from '@ant-design/icons';
+import TabWithScrollableCardComponent from './TabWithScrollableCardComponent';
 
-class CourseList extends Component {
+
+class SameCategoryAlsoWatchingCourses extends Component {
     constructor(props) {
         super(props);
         this.state = {
             courses: [],
+            actualCourseCount : 0,
             page: 0,
             size: 10,
             totalElements: 0,
@@ -44,16 +44,15 @@ class CourseList extends Component {
         promise            
         .then(function(response)  {
             const courses = this.state.courses.slice();
-            //const currentVotes = this.state.currentVotes.slice();
 
             this.setState({
+                actualCourseCount : response.content.length,
                 courses: courses.concat(response.content),
                 page: response.page,
                 size: response.size,
                 totalElements: response.totalElements,
                 totalPages: response.totalPages,
                 last: response.last,
-              //  currentVotes: currentVotes.concat(Array(response.content.length).fill(null)),
                 isLoading: false
             })
         }.bind(this)).catch(function (error) {
@@ -69,7 +68,7 @@ class CourseList extends Component {
     }
 
     componentDidUpdate(nextProps) {
-        if(this.props.isAuthenticated !== nextProps.isAuthenticated) {
+        if(this.props.isAuthenticated !== nextProps.isAuthenticated && !this.state.isLoading) {
             // Reset State
             this.setState({
                 courses: [],
@@ -78,51 +77,29 @@ class CourseList extends Component {
                 totalElements: 0,
                 totalPages: 0,
                 last: true,
-                // currentVotes: [],
                 isLoading: false
             });    
-            this.loadCourseList();
         }
     }
 
     handleLoadMore() {
-        this.loadCourseList(this.state.page + 1);
+        if(!this.state.isLoading)
+        {
+            if(((this.state.page + 1) < this.state.totalPages))
+            {
+                this.loadCourseList(this.state.page + 1);
+            }
+        }
     }
 
     render() {
-        const courseViews = [];
-        this.state.courses.forEach((course, courseIndex) => {
-            courseViews.push(<Course 
-                key={course.learnCourseId} 
-                course={course}
-                />)            
-        });
-
         return (
-            <div className="courses-container">
-                {courseViews}
-                {
-                    !this.state.isLoading && this.state.courses.length === 0 ? (
-                        <div className="no-courses-found">
-                            <span>No Subscribed Courses Found.</span>
-                        </div>    
-                    ): null
-                }  
-                {
-                    !this.state.isLoading && !this.state.last ? (
-                        <div className="load-more-courses"> 
-                            <Button type="dashed" onClick={this.handleLoadMore} disabled={this.state.isLoading}>
-                                <Icon type="plus" /> Load more
-                            </Button>
-                        </div>): null
-                }              
-                {
-                    this.state.isLoading ? 
-                    <LoadingIndicator />: null                     
-                }
-            </div>
+            <TabWithScrollableCardComponent data = {this.state.courses} seeAll = 'See All' 
+            tabName = 'Students are also learning' handleLoadMore = {this.handleLoadMore} 
+            isLoading = {this.state.isLoading} page = {this.state.page} noDataFoundMsg = 'No Same Category Courses Found.'
+            seeAllLink = {`/courseDetailList/${this.props.currentUser.laUserId}/samecategoryresults`} tabIcon = {<ReadOutlined />} tabKey = {'1'}  isCourse = {true} isUser = {false} isCategory = {false}/>
         );
     }
 }
 
-export default withRouter(CourseList);
+export default withRouter(SameCategoryAlsoWatchingCourses);

@@ -1,0 +1,12 @@
+@media (max-width: 768px) {
+  .course-detail-html-content{
+    overflow-x: scroll !important;
+  }
+
+}
+
+.course-detail-html-content{
+  padding: 16px 24px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}

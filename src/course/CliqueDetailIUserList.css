@@ -1,0 +1,65 @@
+.no-users-found {
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;    
+}
+
+.demo-infinite-container-1 {
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    overflow: auto;
+    padding: 8px 24px;
+    max-height: 550px !important;
+    height: fit-content;
+  }
+  .demo-loading-container {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+  }
+    [data-theme="dark"] .demo-infinite-container {
+      border: 1px solid #303030;
+    }
+  
+
+@media (max-width: 768px) {
+    .scroll-menu-arrow {
+        padding: 4px;
+        cursor: pointer;
+        font-size: x-large;
+        display: none;
+    }
+
+    .category-accordion{
+        margin: 4px;
+    }
+}
+
+@media (min-width: 769px) {
+    .scroll-menu-arrow {
+        padding: 4px;
+        cursor: pointer;
+        font-size: x-large;
+        display: block;
+    }
+
+    .category-accordion{
+        margin: 4px;
+    }
+}
+
+.scroll-menu-arrow--disabled {
+    visibility: hidden;
+}
+
+.demo-infinite-container-1 .ant-statistic-content{
+    font-size: 16px !important;
+    color: #4a4a4a !important;
+}
+
+.demo-infinite-container-1 .ant-statistic-title, .demo-infinite-container-1 .lernopus-user-designation{
+    color: #4a4a4a !important;
+    padding-top: 12px;
+    font-weight: 600 !important;
+}

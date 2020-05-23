@@ -1,0 +1,101 @@
+
+@media (max-width: 768px) {
+    .user-card{
+        width: fit-content !important;
+        margin: 4px !important;
+    }
+    .ant-card-body{
+        padding: 12px !important;
+    }
+
+    .ant-card-meta-avatar{
+        display: none !important;
+    }
+
+    .ant-card-meta-title{
+        font-size: inherit;
+    }
+
+    .user-card-avatar-circle{
+        border-radius: 100px 100px 100px 100px !important;
+        margin-left: 21% !important;
+        margin-top: 10% !important;
+    }
+
+    .user-to-follow-card .lernopus-statistics-row{
+        margin-left: 8px !important;
+    }
+
+    .user-to-follow-card .ant-card-meta-title{
+        margin-left: 21% !important;
+    }
+
+    .user-to-follow-card .lernopus-user-designation{
+        margin-left: 17% !important;
+    }
+
+    .user-to-follow-card .lernopus-user-rating{
+        margin-left: 12% !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .user-card{
+        width: 292px !important;
+        margin: 8px !important;
+    }
+    .ant-card-body{
+        padding: 24px !important;
+    }
+
+    .ant-card-meta-avatar{
+        display: block !important;
+    }
+
+    .user-card-avatar-circle{
+        border-radius: 100px 100px 100px 100px !important;
+        margin-left: 30% !important;
+        margin-top: 10% !important;
+    }
+
+    .user-to-follow-card .lernopus-statistics-row{
+        margin-left: 28px !important;
+    }
+
+    .user-to-follow-card .ant-card-meta-title{
+        margin-left: 30% !important;
+    }
+
+    .user-to-follow-card .lernopus-user-designation{
+        margin-left: 26% !important;
+    }
+
+    .user-to-follow-card .lernopus-user-rating{
+        margin-left: 23% !important;
+    }
+
+}
+
+
+.user-to-follow-card .ant-statistic-content{
+    font-size: 16px !important;
+    color: #4a4a4a !important;
+}
+
+.user-to-follow-card .ant-statistic-title, .user-to-follow-card .lernopus-user-designation{
+    color: #4a4a4a !important;
+    padding-top: unset !important;
+    font-weight: 600 !important;
+}
+
+.user-to-follow-card .ant-col-12 {
+    padding: 0px !important;
+}
+
+.user-to-follow-card .ant-card-actions > li{
+    margin: 3px 1px !important;
+}
+
+.user-to-follow-card .lernopus-user-rating{
+    padding-top: 12px !important;
+}

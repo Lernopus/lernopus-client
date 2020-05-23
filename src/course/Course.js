@@ -1,42 +1,57 @@
 import React, { Component } from 'react';
 import './Course.css';
-import { Avatar, Icon } from 'antd';
+import { Avatar, Icon, Card, Tooltip, Tag } from 'antd';
+import { StarTwoTone , HeartOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { getAvatarColor } from '../util/Colors';
 import { formatDateTime } from '../util/Helpers';
+import PostgresSQL from '../pictures/PostgresSQL.jpg';
 
 import { Radio, Button } from 'antd';
 const RadioGroup = Radio.Group;
+const { Meta } = Card;
 
 class Course extends Component {
 
     render() {
         
         return (
-            <div className="course-content">
-            <Link className="creator-link" to={`/learnCourseId/${this.props.course.learnCourseId}`}>
-                <div className="course-header">
-                    <div className="course-creator-info">
-                        <Link className="creator-link" to={`/users/${this.props.course.createdBy.laUserName}`}>
-                            <Avatar className="course-creator-avatar" 
-                                style={{ backgroundColor: getAvatarColor(this.props.course.createdBy.laUserFullName)}} >
-                                {this.props.course.createdBy.laUserFullName[0].toUpperCase()}
-                            </Avatar>
-                            <span className="course-creator-name">
-                                {this.props.course.createdBy.laUserFullName}
-                            </span>
-                            <span className="course-creator-username">
-                                @{this.props.course.createdBy.laUserName}
-                            </span>
-                            <span className="course-creation-date">
-                                {formatDateTime(this.props.course.laCreatedAt)}
-                            </span>
-                        </Link>
-                    </div>
-                    <div className="course-question">
-                        {this.props.course.laLearnCourseName}
-                    </div>
-                </div>
+            <div>
+            <Link to={`/learnCourseId/${this.props.course.learnCourseId}`}>
+            <Card className = 'course-card'
+                cover={
+                    <img
+                        alt="PostgresSQL"
+                        src={PostgresSQL}
+                />
+            }
+            actions={[
+                <Tag color="#87d068">₹420</Tag>,
+                 <span key=' key="rating"'>
+        <Tooltip title="rating">
+          {React.createElement(StarTwoTone, {})}
+        </Tooltip>
+        <span>{2.5}</span>
+      </span>,
+      <span key=' key="whishlist"'>
+      <Tooltip title="Add to Whishlist">
+        {React.createElement(HeartOutlined, {})}
+      </Tooltip>
+    </span>,
+            ]}
+            >
+            <Meta
+                avatar={<div >
+                <Link to={`/users/${this.props.course.createdBy.laUserName}`}>
+                    <Avatar  
+                        style={{ backgroundColor: getAvatarColor(this.props.course.createdBy.laUserFullName)}} >
+                        {this.props.course.createdBy.laUserFullName[0].toUpperCase()}
+                    </Avatar>
+                </Link>
+            </div>}
+                title={this.props.course.laLearnCourseName}
+            />
+            </Card>
             </Link>
             </div>
         );

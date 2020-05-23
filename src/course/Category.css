@@ -1,0 +1,33 @@
+
+@media (max-width: 768px) {
+    .category-card{
+        width: fit-content !important;
+        margin: 4px !important;
+    }
+    .ant-card-body{
+        padding: 12px !important;
+    }
+
+    .ant-card-meta-avatar{
+        display: none !important;
+    }
+
+    .ant-card-meta-title{
+        font-size: inherit;
+    }
+}
+
+@media (min-width: 769px) {
+    .category-card{
+        width: 292px !important;
+        margin: 8px !important;
+    }
+    .ant-card-body{
+        padding: 24px !important;
+    }
+
+    .ant-card-meta-avatar{
+        display: block !important;
+    }
+
+}

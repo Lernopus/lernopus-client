@@ -1,0 +1,37 @@
+.learnopus-app-main-container{
+height: 100vh !important;
+}
+.lernopus-app-logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+.site-layout-sub-header-background {
+  background: #fff;
+}
+
+.site-layout-background {
+  background: #fff;
+}
+  [data-theme="dark"] .site-layout-sub-header-background {
+    background: #141414;
+  }
+
+.lernopus-app-content{
+  margin: 71px 8px 0 !important;
+}
+
+@media (min-width: 769px) {
+  .lernopus-app-content{
+    padding-left: 200px !important;
+  }
+}
+
+@media (max-width: 769px) {
+  .lernopus-app-content{
+    padding-left: unset !important;
+  }
+}
+
+

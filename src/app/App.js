@@ -11,6 +11,7 @@ import { ACCESS_TOKEN } from '../constants';
 import OAuth2RedirectHandler from '../user/oauth2/OAuth2RedirectHandler';
 
 import CourseList from '../course/CourseList';
+import CourseListScrollable from '../course/CourseListScrollable';
 import NewCourse from '../course/NewCourse';
 import Login from '../user/login/Login';
 import Signup from '../user/signup/Signup';
@@ -25,6 +26,7 @@ import { Layout, notification } from 'antd';
 import Alert from 'react-s-alert';
 import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/slide.css';
+import EditCourse from '../course/EditCourse';
 const { Content } = Layout;
 
 class App extends Component {
@@ -107,7 +109,7 @@ class App extends Component {
             <div className="container">
               <Switch>      
                 <Route exact path="/" 
-                  render={(props) => <CourseList isAuthenticated={this.state.isAuthenticated} 
+                  render={(props) => <CourseListScrollable isAuthenticated={this.state.isAuthenticated} 
                       currentUser={this.state.currentUser} handleLogout={this.handleLogout} {...props} />}>
                 </Route>
                 <Route path="/login" 
@@ -118,6 +120,9 @@ class App extends Component {
                 </Route>
                 <Route path="/learnCourseId/:learnCourseId" 
                   render={(props) => <CourseDetail isAuthenticated={this.state.isAuthenticated} currentUser={this.state.currentUser} {...props}  />}>
+                </Route>
+                <Route path="/editcourse/:learnCourseId" 
+                  render={(props) => <EditCourse isAuthenticated={this.state.isAuthenticated} currentUser={this.state.currentUser} {...props}  />}>
                 </Route>
                 <PrivateRoute authenticated={this.state.isAuthenticated} path="/course/new" component={NewCourse} handleLogout={this.handleLogout}></PrivateRoute>
                 <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}></Route>

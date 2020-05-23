@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import './AppHeader.css';
 import courseIcon from '../course.svg';
-import { Layout, Menu, Dropdown, Icon } from 'antd';
+import { Layout, Menu, Dropdown, Icon, Row, Col } from 'antd';
 const Header = Layout.Header;
     
 class AppHeader extends Component {
@@ -26,7 +26,12 @@ class AppHeader extends Component {
           menuItems = [
             <Menu.Item key="/">
               <Link to="/">
-                <Icon type="home" className="nav-icon" />
+                <Icon type="home" className="home-icon" />
+              </Link>
+            </Menu.Item>,
+            <Menu.Item key="/search">
+              <Link to="/search">
+              <Icon type="search" alt="search" className="search-icon" />
               </Link>
             </Menu.Item>,
             <Menu.Item key="/course/new">
@@ -52,19 +57,24 @@ class AppHeader extends Component {
         }
 
         return (
-            <Header className="app-header">
-            <div className="container">
-              <div className="app-title" >
-                <Link to="/">Learn Opus</Link>
-              </div>
-              <Menu
-                className="app-menu"
-                mode="horizontal"
-                selectedKeys={[this.props.location.pathname]}
-                style={{ lineHeight: '64px' }} >
-                  {menuItems}
-              </Menu>
-            </div>
+          <Header className="app-header">
+            <Row>
+              <Col flex={4} className = 'app-header-icon-responsive'>
+                <div className="app-title" >
+                  <Link to="/">Learn Opus</Link>
+                </div>
+              </Col>
+              <Col flex = {1} >
+                <Menu
+                  theme = "dark"
+                  className="app-menu"
+                  mode="horizontal"
+                  selectedKeys={[this.props.location.pathname]}
+                  style={{ lineHeight: '64px' }} >
+                    {menuItems}
+                </Menu>
+              </Col>
+            </Row>
           </Header>
         );
     }
@@ -97,7 +107,7 @@ function ProfileDropdownMenu(props) {
       trigger={['click']}
       getPopupContainer = { () => document.getElementsByClassName('profile-menu')[0]}>
       <a className="ant-dropdown-link">
-         <Icon type="user" className="nav-icon" style={{marginRight: 0}} /> <Icon type="down" />
+         <Icon type="user" className="user-icon" style={{marginRight: 0}} /> <Icon type="down" />
       </a>
     </Dropdown>
   );

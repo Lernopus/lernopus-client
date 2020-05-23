@@ -1,0 +1,347 @@
+.new-course-container {
+    max-width: 520px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.create-course-form-button {
+    width: 100%;
+}
+
+.create-course-form-button[disabled], .create-course-form-button[disabled]:hover, .create-course-form-button[disabled]:focus {
+    opacity: 0.6;
+    color: #fff;
+    background-color: #1890ff;
+    border-color: #1890ff;
+}
+
+
+.dynamic-delete-button {
+    cursor: pointer;
+    position: relative;
+    top: 4px;
+    font-size: 24px;
+    color: #999;
+    transition: all .3s;
+}
+
+.optional-choice {
+    width: calc(100% - 35px);
+    margin-right: 8px;
+}
+
+.dynamic-delete-button:hover {
+    color: #777;
+}
+
+.dynamic-delete-button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.course-form-row {
+    margin-bottom: 20px;
+}
+
+.course-form-row input, .course-form-row textarea {
+    margin-bottom: 4px;
+}
+
+
+
+
+
+
+
+/**File Css **/
+
+
+.files-dropzone-list {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px;
+    border: 1px dashed #D3D3D3;
+    cursor: pointer;
+  }
+  
+  .files-buttons {
+    border-top: 1px solid #D3D3D3;
+    cursor: pointer;
+  }
+  .files-button-submit {
+    display: inline-block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    width: 50%;
+    box-sizing: border-box;
+    border-right: 1px solid #D3D3D3;
+  }
+  .files-button-submit:before {
+    content: "Submit"
+  }
+  .files-button-clear {
+    display: inline-block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    width: 50%;
+    box-sizing: border-box;
+  }
+  .files-button-clear:before {
+    content: "Clear"
+  }
+  .files-list {
+    width: 300px;
+  }
+  .files-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .files-list li:last-child {
+    border: none;
+  }
+  .files-list-item {
+    height: 60px;
+    padding: 10px 0px 10px 10px;
+    /*border-bottom: 1px solid #D3D3D3;*/
+  }
+  .files-list-item-content {
+    float: left;
+    padding-top: 5px;
+    padding-left: 10px;
+    width: calc(100% - 130px);
+  }
+  .files-list-item-content-item {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .files-list-item-content-item-1 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .files-list-item-content-item-2 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .files-list-item-preview {
+    height: 60px;
+    width: 60px;
+    float: left;
+  }
+  .files-list-item-preview-image {
+    height: 100%;
+    width: 100%;
+  }
+  .files-list-item-preview-extension {
+    text-align: center;
+    line-height: 60px;
+    color: #FFF;
+    background-color: #D3D3D3;
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
+  }
+  .files-list-item-remove {
+    height: 60px;
+    width: 60px;
+    float: right;
+    cursor: pointer;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTM4IDEyLjgzbC0yLjgzLTIuODMtMTEuMTcgMTEuMTctMTEuMTctMTEuMTctMi44MyAyLjgzIDExLjE3IDExLjE3LTExLjE3IDExLjE3IDIuODMgMi44MyAxMS4xNy0xMS4xNyAxMS4xNyAxMS4xNyAyLjgzLTIuODMtMTEuMTctMTEuMTd6Ii8+PHBhdGggZD0iTTAgMGg0OHY0OGgtNDh6IiBmaWxsPSJub25lIi8+PC9zdmc+) no-repeat center center;
+    background-size: 30px 30px;
+  }
+  .files-list-item-remove-image {
+    height: 30px;
+    width: 30px;
+    margin-top: 15px;
+    margin-right: 10px;
+    float: right;
+  }
+  
+  
+  
+  /* GALLERY */
+  /* ================== */
+  
+  .files-dropzone-gallery {
+    padding: 10px;
+    border: 1px dashed #D3D3D3;
+    min-height: 300px;
+    width: 500px;
+  }
+  .files-gallery-item {
+    height: 80px;
+    margin: 5px;
+  }
+  
+  
+  .files-dropzone-active {
+    border: 1px solid lightgreen;
+    color: lightgreen;
+  }
+
+
+
+  /**React Tags CSS**/
+
+  .react-tags {
+    position: relative;
+    padding: 6px 0 0 6px;
+    border: 1px solid #D1D1D1;
+    border-radius: 1px;
+  
+    /* shared font styles */
+    font-size: 1em;
+    line-height: 1.2;
+  
+    /* clicking anywhere will focus the input */
+    cursor: text;
+  }
+  
+  .react-tags.is-focused {
+    border-color: #B1B1B1;
+  }
+  
+  .react-tags__selected {
+    display: inline;
+  }
+  
+  .react-tags__selected-tag {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0 6px 6px 0;
+    padding: 6px 8px;
+    border: 1px solid #D1D1D1;
+    border-radius: 2px;
+    background: #F1F1F1;
+  
+    /* match the font styles */
+    font-size: inherit;
+    line-height: inherit;
+  }
+  
+  .react-tags__selected-tag:after {
+    content: '\2715';
+    color: #AAA;
+    margin-left: 8px;
+  }
+  
+  .react-tags__selected-tag:hover,
+  .react-tags__selected-tag:focus {
+    border-color: #B1B1B1;
+  }
+  
+  .react-tags__search {
+    display: inline-block;
+  
+    /* match tag layout */
+    padding: 7px 2px;
+    margin-bottom: 6px;
+  
+    /* prevent autoresize overflowing the container */
+    max-width: 100%;
+  }
+  
+  @media screen and (min-width: 30em) {
+  
+    .react-tags__search {
+      /* this will become the offsetParent for suggestions */
+      position: relative;
+    }
+  
+  }
+  
+  .react-tags__search input {
+    /* prevent autoresize overflowing the container */
+    max-width: 100%;
+  
+    /* remove styles and layout from this element */
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+  
+    /* match the font styles */
+    font-size: inherit;
+    line-height: inherit;
+  }
+  
+  .react-tags__search input::-ms-clear {
+    display: none;
+  }
+  
+  .react-tags__suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    opacity: 100 !important;
+    z-index: 100000000;
+  }
+  
+  @media screen and (min-width: 30em) {
+  
+    .react-tags__suggestions {
+      width: 240px;
+    }
+  
+  }
+  
+  .react-tags__suggestions ul {
+    margin: 4px -1px;
+    padding: 0;
+    list-style: none;
+    background: white;
+    border: 1px solid #D1D1D1;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .react-tags__suggestions li {
+    border-bottom: 1px solid #ddd;
+    padding: 6px 8px;
+  }
+  
+  .react-tags__suggestions li mark {
+    text-decoration: underline;
+    background: none;
+    font-weight: 600;
+  }
+  
+  .react-tags__suggestions li:hover {
+    cursor: pointer;
+    background: #eee;
+  }
+  
+  .react-tags__suggestions li.is-active {
+    background: #b7cfe0;
+  }
+  
+  .react-tags__suggestions li.is-disabled {
+    opacity: 0.5;
+    cursor: auto;
+  }
+
+  .course-choice-radio-group {
+    display: block;
+}
+
+.course-choice-radio {
+    display: block;
+    line-height: 1.7;
+    font-size: 15px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.75);
+}

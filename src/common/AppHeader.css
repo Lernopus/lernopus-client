@@ -16,6 +16,7 @@
   .app-header {
     position: fixed;
     width: 100%;
+    padding: 0 !important;
     box-shadow: 0 2px 8px #f0f1f2;
     z-index: 10;
     padding: 0;
@@ -62,7 +63,7 @@
     margin: -10px -12px;
   }
   
-  .nav-icon {
+  .home-icon .user-icon {
     font-size: 20px;
   }
 
@@ -83,4 +84,16 @@
     padding: 0 15px;
     margin: 0 -15px;
   }
-}  
+
+  .app-header-icon-responsive{
+    margin-left: 16px !important;
+    margin-right: 22px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-header-icon-responsive{
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+  }
+}
