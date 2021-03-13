@@ -1,0 +1,17 @@
+.ant-list-item-meta-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .course-slide-video-reference-content {
+    height: 300px;
+  }  
+}
+
+@media (min-width: 769px) {
+  .course-slide-video-reference-content {
+    height: 600px;
+  }
+}

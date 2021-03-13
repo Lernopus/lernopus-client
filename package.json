@@ -13,6 +13,7 @@
     "ckeditor4-react": "^1.1.0",
     "codemirror": "^5.49.0",
     "draft-js": "^0.11.0",
+    "firebase": "^5.5.4",
     "form-data": "^2.5.1",
     "react": "^16.5.2",
     "react-chips": "^0.8.0",

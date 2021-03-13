@@ -33,6 +33,7 @@ class TabWithScrollableCardComponent extends Component {
                 key={user.laUserId}
                 bordered = {true} 
                 user={user}
+                currentUser={this.props.currentUser}
                 />)            
         })) : this.props.data.forEach((category, categoryIndex) => {
             dataList.push(<Category

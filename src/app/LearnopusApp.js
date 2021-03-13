@@ -122,7 +122,7 @@ class LearnopusApp extends Component {
               currentUser={this.state.currentUser} 
               onLogout={this.handleLogout} />
     <Layout>
-      <Content className = 'lernopus-app-content'>
+      <Content className = {(!this.state.currentUser ? 'lernopus-app-login' : 'lernopus-app-content')} >
       <div>
       <Switch>      
         <Route exact path="/" 
@@ -137,7 +137,7 @@ class LearnopusApp extends Component {
                   <LernopusSpecialCategoryList isAuthenticated={this.state.isAuthenticated} 
                   currentUser={this.state.currentUser} handleLogout={this.handleLogout} {...props} isSearch = {false} />
                   <LernopusAuthorToFollowList isAuthenticated={this.state.isAuthenticated} 
-                  currentUser={this.state.currentUser} handleLogout={this.handleLogout} {...props} / >
+                  currentUser={this.state.currentUser} handleLogout={this.handleLogout} {...props} />
                   <ContinueCourses isAuthenticated={this.state.isAuthenticated} 
                     currentUser={this.state.currentUser} handleLogout={this.handleLogout} {...props} />
                   <TopPicksForYouCourses isAuthenticated={this.state.isAuthenticated} 

@@ -6,7 +6,7 @@
 
 .signup-form-button {
     width: 100%;
-    margin-top: 15px;
+    margin-top: 8px;
 }
 
 .signup-form-button[disabled], .signup-form-button[disabled]:hover, .signup-form-button[disabled]:focus {
@@ -21,7 +21,7 @@
 }
 
 .social-btn {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     font-weight: 400;
     font-size: 16px;
 }
@@ -44,4 +44,14 @@
 .social-btn.github img {
     height: 24px;
     margin-left: 3px;
+}
+
+.ant-form-item {
+    margin-bottom: 4px !important;
+}
+
+#sign-up-form-content {
+    max-height: 272px !important;
+    overflow-y: scroll;
+    padding: 6px;
 }

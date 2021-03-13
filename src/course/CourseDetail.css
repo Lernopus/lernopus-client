@@ -70,13 +70,15 @@
   .course-detail-author-info-detail-card-col{
     display: block !important;
     margin: 8px !important;
-    border-left: groove !important;
+  }
+  .course-detail-author-info-card-col {
+    border-right: groove !important;
   }
   .rating-info-card{
     width: 292px !important;
   }
-  .course-detail-rating-info-detail-card-col{
-    border-left: groove !important;
+  .course-detail-rating-info-card-col{
+    border-right: groove !important;
   }
   .course-detail-rating-info-detail-card-col .ant-card-meta-title{
     display: block !important;
@@ -169,7 +171,7 @@
 }
 
 .course-detail-rating-info-card-col, .course-detail-rating-info-detail-card-col{
-  margin: 8px !important;
+  margin: 14px !important;
 }
 
 .user-details {
@@ -291,8 +293,8 @@
   .files-list li:last-child {
     border: none;
   }
-  .files-list-item {
-    height: 60px;
+  .files-list-detail-item {
+    height: 76px;
     padding: 10px 0px 10px 10px;
     /*border-bottom: 1px solid #D3D3D3;*/
   }

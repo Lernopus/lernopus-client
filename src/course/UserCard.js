@@ -5,16 +5,47 @@ import { UserOutlined, BookOutlined, UserAddOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { getAvatarColor } from '../util/Colors';
 import { Button } from 'antd';
+import { addFollowersForUser} from '../util/APIUtils';
 const { Meta } = Card;
 const { Text } = Typography;
 
 class UserCard extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            toBeFollowed: true,
+            currentUser: props.currentUser,
+            displayedUser: props.user
+        };
+
+        this.handleUserFollowingChange = this.handleUserFollowingChange.bind(this);
+    }
+
+    handleUserFollowingChange() {
+        var tobefollowedUserId = this.state.displayedUser.laUserId;
+        var currentUserId = this.state.currentUser.laUserId;
+        if(tobefollowedUserId !== null && tobefollowedUserId !== undefined && currentUserId !== null && currentUserId !== undefined) {  
+          var laUserFollowing = {
+            laUserId: JSON.stringify(currentUserId),
+            laUserFollowerId: JSON.stringify(tobefollowedUserId)
+          };
+          addFollowersForUser(laUserFollowing)
+            .then(response => {
+              if(response !== null && response !== undefined) {
+                this.setState ({
+                    toBeFollowed: !this.state.toBeFollowed
+                });
+              }
+            });
+        }
+  
+      }
+
     render() {
         
         return (
             <div>
-            
             <Card className = 'course-card user-to-follow-card'
                 bordered = {this.props.bordered}
                 cover={
@@ -34,7 +65,7 @@ class UserCard extends Component {
             actions={[
       <span key=' key="whishlist"'>
       <Tooltip title="Get Course Suggestions By this Author">
-        <Button type = 'primary' icon={<UserAddOutlined/>} block>Follow</Button>
+        <Button type = 'primary' icon={<UserAddOutlined/>} onClick={this.handleUserFollowingChange} block>{this.state.toBeFollowed ? 'Follow' : 'Unfollow'}</Button>
       </Tooltip>
     </span>]}
             >

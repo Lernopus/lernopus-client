@@ -12,7 +12,7 @@ import {
 } from '../../constants';
 import fbLogo from '../../img/fb-logo.png';
 import googleLogo from '../../img/google-logo.png';
-import githubLogo from '../../img/github-logo.png';
+import Management from '../../pictures/Management.jpg';
 
 import { Form, Input, Button, notification } from 'antd';
 const FormItem = Form.Item;
@@ -106,11 +106,20 @@ class Signup extends Component {
             }}/>;            
         }
         return (
-            <div className="signup-container">
-                <h1 className="page-title">Sign Up</h1>
-                <div className="signup-content">
+            <div id="sign-in-card" style={{display: 'flex', justifyCcontent: 'space-between'}}>
+            <div id="landing-image" className='landing-image'>
+                <img alt="logo" src={Management} width={window.innerWidth - 460} style={{borderRadius: '16px', boxSshadow: '0 4px 8px 0 rgba(0,0,0,0.2)'}} />
+            </div>
+            <div className="login-container" style={{float: 'right', width: '100%', marginTop: 'unset', backgroundColor: 'white', borderRadius: '16px'}}>
+            <div style={{margin: '10px', marginTop: '20px'}}>
+                <h1 className="page-title" style={{marginBottom: '10px'}}>Sign Up</h1>
+                <div className="login-content">
                     <SocialSignup />
+                    <div className="or-separator">
+                        <span className="or-text">OR</span>
+                    </div>
                     <Form onSubmit={this.handleSubmit} className="signup-form">
+                        <div id='sign-up-form-content'>
                         <FormItem 
                             label="Full Name"
                             validateStatus={this.state.name.validateStatus}
@@ -179,6 +188,7 @@ class Signup extends Component {
                                 value={this.state.password.value} 
                                 onChange={(event) => this.handleInputChange(event, this.validatePassword)} />    
                         </FormItem>
+                        </div>
                         <FormItem>
                             <Button type="primary" 
                                 htmlType="submit" 
@@ -189,6 +199,8 @@ class Signup extends Component {
                         </FormItem>
                     </Form>
                 </div>
+            </div>
+            </div>
             </div>
         );
     }

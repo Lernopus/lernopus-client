@@ -3,8 +3,7 @@ import './FeedbackCommentComponent.css';
 import { Button, List, Comment, Tooltip, Form } from 'antd';
 import { Avatar, Tabs } from 'antd';
 import { withRouter } from 'react-router-dom';
-import { LikeOutlined, ReadOutlined, DislikeOutlined } from '@ant-design/icons';
-import moment from 'moment';
+import { LikeOutlined, CommentOutlined, DislikeOutlined } from '@ant-design/icons';
 import TextArea from 'antd/lib/input/TextArea';
 const { TabPane } = Tabs;
 
@@ -19,7 +18,7 @@ class FeedbackCommentComponent extends Component {
                       <TabPane
                         tab={
                             <span>
-                            <ReadOutlined />
+                            <CommentOutlined />
                                 {this.props.tabName}
                             </span>
                             }
@@ -47,22 +46,22 @@ class FeedbackCommentComponent extends Component {
         renderItem={item => (
           <List.Item>
           <Comment
-            actions={[<StudentsFeedbackActionComponent studentsFeedbackAction = {item.actions}></StudentsFeedbackActionComponent>]}
-            author={<a>{item.laUserFullName}</a>}
+            actions={[<StudentsFeedbackActionComponent studentsFeedbackAction = {(item.actions !== null && item.actions !== undefined) ? item.actions :  item[0].actions}></StudentsFeedbackActionComponent>]}
+            author={<a>{(item.laUserFullName !== null && item.laUserFullName !== undefined) ? item.laUserFullName : item[0].laUserFullName}</a>}
             avatar={
               <Avatar
-                src= {item.laImagePath}
-                alt={item.laUserFullName}
+                src= {(item.laImagePath !== null && item.laImagePath !== undefined) ? item.laImagePath : item[0].laImagePath}
+                alt={(item.laUserFullName !== null && item.laUserFullName !== undefined) ? item.laUserFullName :  item[0].laUserFullName}
               />
             }
             content={
               <p>
-                {item.laCommentContent}
+                {(item.laCommentContent !== null && item.laCommentContent !== undefined) ? item.laCommentContent :  item[0].laCommentContent}
               </p>
             }
             datetime={
-              <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
-                <span>{moment().fromNow()}</span>
+              <Tooltip title={(item.laCommentTime !== null && item.laCommentTime !== undefined) ? item.laCommentTime :  (item[0].laCommentTime !== null && item[0].laCommentTime !== undefined) ? item[0].laCommentTime.toString() : ""}>
+                <span>{(item.laCommentTime !== null && item.laCommentTime !== undefined) ? item.laCommentTime.toString() :  (item[0].laCommentTime !== null && item[0].laCommentTime !== undefined) ? item[0].laCommentTime.toString() : ""}</span>
               </Tooltip>
             }
           />
@@ -77,7 +76,7 @@ class FeedbackCommentComponent extends Component {
 
   function StudentsFeedbackActionComponent(props){
     return (
-        <div>
+        <div style={{display: 'none'}}>
         <span key="comment-basic-like">
         <Tooltip title="Like">
             {React.createElement(LikeOutlined, {})}

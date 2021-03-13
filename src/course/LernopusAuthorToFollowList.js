@@ -90,7 +90,8 @@ class LernopusAuthorToFollowList extends Component {
             <TabWithScrollableCardComponent data = {this.state.users} seeAll = 'See All' 
             tabName = 'Learn Opus Talents To Follow' handleLoadMore = {this.handleLoadMore} 
             isLoading = {this.state.isLoading} page = {this.state.page} noDataFoundMsg = 'No Talents To Follow Found.'
-            seeAllLink = {`/categoryDetails/authorstofollow/false`} tabIcon = {<SnippetsOutlined />} tabKey = {'1'} isCourse = {false} isUser = {true} isCategory = {false}/>
+            seeAllLink = {`/categoryDetails/authorstofollow/false`} tabIcon = {<SnippetsOutlined />} tabKey = {'1'} isCourse = {false} isUser = {true} isCategory = {false}
+            currentUser = {this.props.currentUser} />
         );
     }
 }

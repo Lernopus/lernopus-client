@@ -1,10 +1,14 @@
 export const API_BASE = process.env.REACT_APP_API_BASE_URL || 'http://localhost:1010';
 export const FRONT_BASE = process.env.REACT_APP_FRONT_URL;
 let API_BASE_URI;
+let API_BASE_BACKEND_URI;
 if(API_BASE) {
     API_BASE_URI = API_BASE+'/api';
+    API_BASE_BACKEND_URI = API_BASE+'/backend/api';
 }
 export const API_BASE_URL = API_BASE_URI || 'http://localhost:1010/api';
+
+export const BACKEND_API_BASE_URL = API_BASE_BACKEND_URI || 'http://localhost:1010/backend/api';
 
 export const ACCESS_TOKEN = 'accessToken';
 

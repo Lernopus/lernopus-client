@@ -162,6 +162,15 @@ export function getSearchResults(searchedValue) {
     });
 }
 
+export function getSearchResultsForParentMapping(searchedValue) {
+    var size = COURSE_LIST_SIZE;
+
+    return request({
+        url: API_BASE_URL + "/courses/getSearchResultsForParentMapping?searchedValue=" + searchedValue  + "&size=" + size,
+        method: 'GET'
+    });
+}
+
 export function getAllSpecialCategories(page, size) {
     page = page || 0;
     size = size || COURSE_LIST_SIZE;
@@ -338,32 +347,34 @@ export function getUserCreatedCoursesForSearch(username, page, size, searchedVal
     });
 }
 
-export function uploadAttachFiles(laAttachFiles) {
-    return requestForMultiPart({
-        url: API_BASE_URL + "/courses/uploadMultipleFiles",
+export function uploadComment(laCourseComment) {
+    return request({
+        url: API_BASE_URL + "/courses/uploadComments",
         method: 'POST',
-        body: laAttachFiles         
+        body: JSON.stringify(laCourseComment)
     });
 }
 
-const requestForMultiPart = (options) => {
-    const headers = new Headers({
-    })
-    
-    if(localStorage.getItem(ACCESS_TOKEN)) {
-        headers.append('Authorization', 'Bearer ' + localStorage.getItem(ACCESS_TOKEN))
-    }
+export function uploadRating(laCourseRating) {
+    return request({
+        url: API_BASE_URL + "/courses/uploadRating",
+        method: 'POST',
+        body: JSON.stringify(laCourseRating)
+    });
+}
 
-    const defaults = {headers: headers};
-    options = Object.assign({}, defaults, options);
+export function uploadCourseViews(laCourseViews) {
+    return request({
+        url: API_BASE_URL + "/courses/uploadCourseViewCount",
+        method: 'POST',
+        body: JSON.stringify(laCourseViews)
+    });
+}
 
-    return fetch(options.url, options)
-    .then(response => 
-        response.json().then(json => {
-            if(!response.ok) {
-                return Promise.reject(json);
-            }
-            return json;
-        })
-    );
-};
+export function addFollowersForUser(laUserFollowers) {
+    return request({
+        url: API_BASE_URL + "/courses/addFollowersForUser",
+        method: 'POST',
+        body: JSON.stringify(laUserFollowers)
+    });
+}

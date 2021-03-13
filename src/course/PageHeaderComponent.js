@@ -3,12 +3,18 @@ import { Button, PageHeader, Tag, Typography } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
 import { formatDateTime } from '../util/Helpers';
 import { Row, Col } from 'antd';
+import './PageHeaderComponent.css';
 const { Paragraph } = Typography;
 
 class PageHeaderComponent extends Component {
     constructor(props) {
-        super(props);   
+        super(props);
+        this.onEditCourse = this.onEditCourse.bind(this);   
     }
+
+    onEditCourse = () => {
+      
+    };
 
     render() {
         const pageNavigator = [
@@ -23,7 +29,7 @@ class PageHeaderComponent extends Component {
             {
               path: 'second',
               breadcrumbName: 'Third-level Menu',
-            },
+            }
           ];
           return (
               <div className = 'course-page-header-component'>
@@ -31,28 +37,27 @@ class PageHeaderComponent extends Component {
                       title={this.props.laLearnCourseName}
                       className="site-page-header"
                       subTitle={<PageHeaderCreatedUserComponent laUserName = {this.props.laUserName} 
-                      laUserFullName = {this.props.laUserFullName} laCreatedAt = {this.props.laCreatedAt}></PageHeaderCreatedUserComponent>}
+                      laUserFullName = {this.props.laUserFullName} laCreatedAt = {this.props.laCreatedAt} currentUser={this.props.currentUser}></PageHeaderCreatedUserComponent>}
                       tags={<PageHeaderTagComponent laTechTag = {this.props.laTechTag}></PageHeaderTagComponent>}
                       extra={[
                           <Button key="3">Add to Whishlist</Button>,
                           <Button key="2">Read Later</Button>,
-                          <Button key="1" type="primary">
-                              Edit
-                          </Button>
+                          <Button key="1" onClick={this.onEditCourse} type="primary">Edit</Button>
               ]}
-              avatar={{ src: 'https://avatars1.githubusercontent.com/u/8186664?s=460&v=4' }}
+              avatar={{ src: this.props.currentUser.laImagePath }}
               breadcrumb={{ pageNavigator }}
             >
               <PageHeaderContentComponent
                 extraContent={
                   <img
-                    src="https://gw.alipayobjects.com/zos/antfincdn/K%24NnlsB%26hz/pageHeader.svg"
-                    alt="content"
+                    className="course-background-image"
+                    src={(this.props.laCourseBackgroundImage !== null && this.props.laCourseBackgroundImage !== undefined) ? this.props.laCourseBackgroundImage : "https://gw.alipayobjects.com/zos/antfincdn/K%24NnlsB%26hz/pageHeader.svg"}
+                    alt="course-background-image"
                     width="100%"
                   />
                 }
               >
-              <PageHeaderDetailContentComponent></PageHeaderDetailContentComponent>
+              <PageHeaderDetailContentComponent laCourseDescription = {this.props.laCourseDescription}></PageHeaderDetailContentComponent>
               </PageHeaderContentComponent>
             </PageHeader>
               </div>
@@ -75,11 +80,14 @@ function IconLinkComponent(props) {
     return (
         <div>
       <Paragraph>
-          Ant Design&#x27;s design team preferred to design with the HSB color model, which makes it
-          easier for designers to have a clear psychological expectation of color when adjusting colors,
-          as well as facilitate communication in teams.
+          {
+            props.laCourseDescription !== null && props.laCourseDescription !== undefined && props.laCourseDescription !== ''
+            ?
+            props.laCourseDescription
+            : '---'
+          }
       </Paragraph>
-      <Row>
+      <Row style ={{display: 'none'}}>
         <Col span = {8}>
             <IconLinkComponent
                 src="https://gw.alipayobjects.com/zos/rmsportal/MjEImQtenlyueSmVEfUD.svg"
@@ -120,7 +128,7 @@ function IconLinkComponent(props) {
     {
         props.laTechTag.forEach((course, courseIndex) => {
             courseTechTag.push(
-                <Tag color="blue" key = {props.laTechTag}>{props.laTechTag}</Tag>
+                <Tag color="blue" key = {courseIndex}>{course}</Tag>
             )            
         });
     }
@@ -134,7 +142,7 @@ function IconLinkComponent(props) {
   function PageHeaderCreatedUserComponent(props){
     return (
         <div>
-        <Link className="creator-link" to={`/users/${props.laUserName}`}>
+        <Link className="creator-link" to={`/users/${props.currentUser.laUserName}`}>
             <Row>
             <Col span = {8}>
             <span className="course-detail-creator-name">

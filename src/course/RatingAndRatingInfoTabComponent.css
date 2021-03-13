@@ -53,6 +53,11 @@
   .rating-info-card{
     width: 212px !important;
   }
+  .rating-info-card .ant-card-body{
+    padding-left: 24px !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+  }
   .course-detail-rating-info-detail-card-col .ant-card-meta-title{
     display: none !important;
   }
@@ -70,13 +75,20 @@
   .course-detail-author-info-detail-card-col{
     display: block !important;
     margin: 8px !important;
-    border-left: groove !important;
+  }
+  .course-detail-author-info-card-col {
+    border-right: groove !important;
   }
   .rating-info-card{
     width: 292px !important;
   }
-  .course-detail-rating-info-detail-card-col{
-    border-left: groove !important;
+  .rating-info-card .ant-card-body{
+    padding-left: 24px !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+  }
+  .course-detail-rating-info-card-col{
+    border-right: groove !important;
   }
   .course-detail-rating-info-detail-card-col .ant-card-meta-title{
     display: block !important;
@@ -169,7 +181,7 @@
 }
 
 .course-detail-rating-info-card-col, .course-detail-rating-info-detail-card-col{
-  margin: 8px !important;
+  margin: 14px !important;
 }
 
 .user-details {

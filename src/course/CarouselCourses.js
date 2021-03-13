@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Carousel } from 'antd';
 import { withRouter } from 'react-router-dom';
 import './CarouselCourses.css';
+import ProgrammingJava from '../pictures/ProgrammingJava.jpg';
+import DataBase from '../pictures/DataBase.jpg';
+import SocialMediaApps from '../pictures/SocialMediaApps.jpg';
+import Design from '../pictures/Design.jpg';
 
 class CarouselCourses extends Component {
     constructor(props) {
@@ -15,16 +19,16 @@ class CarouselCourses extends Component {
             <div>
             <Carousel autoplay>
                 <div>
-                    <h3>1</h3>
+                <img alt="logo" src={ProgrammingJava} style={{width: '-webkit-fill-available', height: '-webkit-fill-available'}} />
                 </div>
                 <div>
-                    <h3>2</h3>
+                <img alt="logo" src={DataBase} style={{width: '-webkit-fill-available', height: '-webkit-fill-available'}} />
                 </div>
                 <div>
-                    <h3>3</h3>
+                <img alt="logo" src={SocialMediaApps} style={{width: '-webkit-fill-available', height: '-webkit-fill-available'}} />
                 </div>
                 <div>
-                    <h3>4</h3>
+                <img alt="logo" src={Design} style={{width: '-webkit-fill-available', height: '-webkit-fill-available'}} />
                 </div>
             </Carousel>
             </div>

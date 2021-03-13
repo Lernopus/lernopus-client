@@ -1,3 +1,34 @@
+.create-course-button-row, .lernopus-course-header{
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.lernopus-course-header{
+  font-size: 14px;
+}
+
+.create-course-button{
+  float: right !important;
+}
+
+@media (max-width: 769px) {
+  .ant-form-item-label{
+    float: left;
+  }
+
+  .ant-checkbox + span{
+    padding-left: 4px !important;
+    padding-right: 0px !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .ant-form-item-label{
+    float: left;
+  }
+}
+
+
 .new-course-container {
     max-width: 520px;
     margin: 0 auto;

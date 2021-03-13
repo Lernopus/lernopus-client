@@ -34,4 +34,21 @@ height: 100vh !important;
   }
 }
 
+.lernopus-app-login{
+  margin: 71px 8px 0 !important;
+}
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #e2e0e0;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background-color: #c0c0c0;
+}

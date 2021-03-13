@@ -5,6 +5,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { GOOGLE_AUTH_URL, FACEBOOK_AUTH_URL,  ACCESS_TOKEN } from '../../constants';
 import fbLogo from '../../img/fb-logo.png';
 import googleLogo from '../../img/google-logo.png';
+import Management from '../../pictures/Management.jpg';
 import Alert from 'react-s-alert';
 
 import { Form, Input, Button, Icon, notification } from 'antd';
@@ -39,8 +40,13 @@ class Login extends Component {
 
         const AntWrappedLoginForm = Form.create()(LoginForm)
         return (
-            <div className="login-container">
-                <h1 className="page-title">Login</h1>
+            <div id="login-card" style={{display: 'flex', justifyCcontent: 'space-between'}}>
+            <div id="landing-image" className='landing-image'>
+                <img alt="logo" src={Management} width={window.innerWidth - 460} style={{borderRadius: '16px', boxSshadow: '0 4px 8px 0 rgba(0,0,0,0.2)'}} />
+            </div>
+            <div className="login-container" style={{float: 'right', width: '100%', marginTop: 'unset', backgroundColor: 'white', borderRadius: '16px'}}>
+            <div style={{margin: '10px', marginTop: '20px'}}>
+                <h1 className="page-title" style={{marginBottom: '10px'}}>Login</h1>
                 <div className="login-content">
                     <SocialLogin />
                     <div className="or-separator">
@@ -48,6 +54,8 @@ class Login extends Component {
                     </div>
                     <AntWrappedLoginForm onLogin={this.props.onLogin} />
                 </div>
+            </div>
+            </div>
             </div>
         );
     }
@@ -106,7 +114,8 @@ class LoginForm extends Component {
         const { getFieldDecorator } = this.props.form;
         return (
             <Form onSubmit={this.handleSubmit} className="login-form">
-                <FormItem>
+                <FormItem
+                    label="User Name / Mail ID">
                     {getFieldDecorator('laUserNameOrLaMailId', {
                         rules: [{ required: true, message: 'Please input your username or email!' }],
                     })(
@@ -117,7 +126,8 @@ class LoginForm extends Component {
                         placeholder="Username or Email" />    
                     )}
                 </FormItem>
-                <FormItem>
+                <FormItem
+                label="Password">
                 {getFieldDecorator('laPassword', {
                     rules: [{ required: true, message: 'Please input your Password!' }],
                 })(
@@ -129,7 +139,8 @@ class LoginForm extends Component {
                         placeholder="Password"  />                        
                 )}
                 </FormItem>
-                <FormItem>
+                <FormItem
+                style={{marginTop: 16}}>
                     <Button type="primary" htmlType="submit" size="large" className="login-form-button">Login</Button>
                     Or <Link to="/signup">register now!</Link>
                 </FormItem>

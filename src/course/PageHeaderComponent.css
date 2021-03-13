@@ -15,6 +15,10 @@
     .course-accordion{
         margin: 4px;
     }
+
+    .course-background-image {
+        max-width: 100%;
+    }
 }
 
 @media (min-width: 769px) {
@@ -27,6 +31,10 @@
 
     .course-accordion{
         margin: 4px;
+    }
+
+    .course-background-image {
+        max-width: 167px;
     }
 }
 

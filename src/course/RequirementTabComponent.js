@@ -12,7 +12,8 @@ class RequirementTabComponent extends Component {
     render() {
       const preRequisiteList = [];
       this.props.tabContent.forEach((prerequisiteData, userIndex) => {
-        preRequisiteList.push(<RequirementTabPaneComponent
+        if(prerequisiteData.tabContent !== null && prerequisiteData.tabContent !== undefined && prerequisiteData.tabContent.length > 0) {
+          preRequisiteList.push(<RequirementTabPaneComponent
             key={prerequisiteData.tabId}
             tabId={prerequisiteData.tabId}
             data={prerequisiteData.tabContent}
@@ -22,15 +23,21 @@ class RequirementTabComponent extends Component {
                 {prerequisiteData.tabName}
               </span>
               }
-            />)            
+            />)
+        }
       });
 
         return (
-            <div className = 'what-will-i-learn-tab'>
-            <Tabs defaultActiveKey="1">
+              preRequisiteList.length > 0
+               ? 
+               (
+                <div className = 'what-will-i-learn-tab'>
+                  <Tabs defaultActiveKey="1">
                     {preRequisiteList}
-            </Tabs>
+                  </Tabs>
                 </div>
+                )
+                : null
         );
     }
 }

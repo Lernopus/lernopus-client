@@ -11,10 +11,10 @@ class LernopusOfficialCategoryList extends Component {
         this.state = {
             categories: [],
             actualCategoryCount : 0,
-            page: 0,
+            page: 1,
             size: 10,
             totalElements: 0,
-            totalPages: 0,
+            totalPages: 1,
             last: true,
             isLoading: false
         };
@@ -57,8 +57,7 @@ class LernopusOfficialCategoryList extends Component {
             this.setState({
                 isLoading: false
             })
-        }.bind(this));  
-        
+        }.bind(this));        
     }
 
     componentDidMount() {

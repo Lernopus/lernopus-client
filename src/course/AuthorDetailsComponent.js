@@ -4,7 +4,7 @@ import { Typography, Card } from 'antd';
 import { Tabs } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
 import { Row, Col } from 'antd';
-import { ReadOutlined } from '@ant-design/icons';
+import { EditOutlined } from '@ant-design/icons';
 import UserCard from './UserCard';
 const { Paragraph } = Typography;
 const { TabPane } = Tabs;
@@ -22,7 +22,7 @@ class AuthorDetailsComponent extends Component {
                       <TabPane
                         tab={
                             <span>
-                            <ReadOutlined />
+                            <EditOutlined />
                                 {this.props.tabName}
                             </span>
                             }

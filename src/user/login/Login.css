@@ -3,7 +3,14 @@
     margin: 0 auto;
     margin: 0 auto;
     margin-top: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
+  
+.login-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
 
 .login-form-button {
     width: 100%;
@@ -39,3 +46,15 @@
     color: rgba(0, 0, 0, 0.65);
     font-size: 14px;
 }
+
+@media (min-width: 769px) {
+    .landing-image{
+      display: block;
+    }
+  }
+  
+  @media (max-width: 769px) {
+    .landing-image{
+        display: none;
+    }
+  }
